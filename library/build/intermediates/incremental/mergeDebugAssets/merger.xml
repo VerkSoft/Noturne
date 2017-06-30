@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/esdras/Documentos/Kellinwood-ZipSigner-master/zipsigner-lib/src/main/assets"/><source path="/home/esdras/Documentos/Kellinwood-ZipSigner-master/zipsigner-lib/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/home/esdras/Documentos/Kellinwood-ZipSigner-master/zipsigner-lib/src/debug/assets"/></dataSet></merger>
