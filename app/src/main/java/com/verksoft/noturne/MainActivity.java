@@ -1,5 +1,8 @@
 package com.verksoft.noturne;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.Snackbar;
@@ -91,8 +94,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.run_web){
 
-            Snackbar snackbar = Snackbar.make(coordinatorLayout, "Building Project...", Snackbar.LENGTH_LONG);
-            snackbar.show();
+            /*Intent intent = new Intent(MainActivity.this, CustomChromeTabsAndroid.class);
+            startActivity(intent);*/
+            String url = "https://www.google.com/";
+            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+            CustomTabsIntent customTabsIntent = builder.build();
+            customTabsIntent.launchUrl(this, Uri.parse(url));
+
 
             return true;
         }
