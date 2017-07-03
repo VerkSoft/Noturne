@@ -11,6 +11,12 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/ziptest"
+        android:title="ZipSignerTest"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

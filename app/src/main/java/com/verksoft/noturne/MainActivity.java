@@ -22,7 +22,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import kellinwood.security.zipsigner.ZipSigner;
+import kellinwood.security.zipsigner.ProgressListener;
+import kellinwood.security.zipsigner.ProgressEvent;
+
+
 import com.verksoft.noturne.ui.LockableScrollView;
+
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
 
-        if(id == R.id.run_web){
+        if(id == R.id.run_web /* && aqui do lado sera colocado em breve uma condiçao "se o arquivo tiver a extensao .html*/){
 
             /*Intent intent = new Intent(MainActivity.this, CustomChromeTabsAndroid.class);
             startActivity(intent);*/
@@ -101,11 +109,31 @@ public class MainActivity extends AppCompatActivity {
             CustomTabsIntent customTabsIntent = builder.build();
             customTabsIntent.launchUrl(this, Uri.parse(url));
 
-
             return true;
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.ziptest){
+
+            try {
+                ZipSigner zipSigner = new ZipSigner();
+                zipSigner.signZip("/storage/emulated/0/zip.zip","/storage/emulated/0/zipsigned.apk");
+                zipSigner.setKeymode(ZipSigner.MODE_AUTO_TESTKEY);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (GeneralSecurityException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return true;
         }
 
