@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 ZipSigner zipSigner = new ZipSigner();
-                zipSigner.signZip("/storage/emulated/0/zip.zip","/storage/emulated/0/zipsigned.apk");
                 zipSigner.setKeymode(ZipSigner.MODE_AUTO_TESTKEY);
+                zipSigner.signZip("/storage/emulated/0/zip.zip","/storage/emulated/0/zipsigned.apk");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
